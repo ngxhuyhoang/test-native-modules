@@ -18,8 +18,8 @@ class CounterModule: NSObject {
   }
   
   
-  @objc(increaseAsync:)
-  func increaseAsync(_ resolve: RCTPromiseResolveBlock) {
+  @objc(increaseAsync:reject:)
+  func increaseAsync(_ resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
     counter += 1
     resolve(counter)
   }
@@ -31,8 +31,8 @@ class CounterModule: NSObject {
   }
   
   
-  @objc(decreaseAsync:)
-  func decreaseAsync(_ resolve: RCTPromiseResolveBlock) {
+  @objc(decreaseAsync:reject:)
+  func decreaseAsync(_ resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
     counter -= 1
     resolve(counter)
   }
