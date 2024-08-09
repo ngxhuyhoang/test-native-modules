@@ -1,7 +1,10 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { useState } from 'react';
-import { Button, NativeModules, Text, View } from 'react-native';
+import { Button, NativeModules, SafeAreaView, Text } from 'react-native';
 
-const { CounterModule } = NativeModules;
+const { CounterModule, CalendarModule } = NativeModules;
+
+console.log(NativeModules);
 
 const App = () => {
   const [counter, setCounter] = useState(0);
@@ -29,14 +32,20 @@ const App = () => {
   };
 
   return (
-    <View>
-      <Text>{counter}</Text>
+    <SafeAreaView>
+      <Text style={{ textAlign: 'center', fontSize: 48 }}>{counter}</Text>
 
       <Button title="Increase Async" onPress={onPressIncreaseAsync} />
       <Button title="Increase" onPress={onPressIncrease} />
       <Button title="Decrease Async" onPress={onPressDecreaseAsync} />
       <Button title="Decrease" onPress={onPressDecrease} />
-    </View>
+      <Button
+        title="Test"
+        onPress={() => {
+          CalendarModule.createCalendarEvent('testName', 'testLocation');
+        }}
+      />
+    </SafeAreaView>
   );
 };
 
