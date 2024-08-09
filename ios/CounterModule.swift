@@ -17,9 +17,23 @@ class CounterModule: NSObject {
     callback([counter])
   }
   
+  
+  @objc(increaseAsync:)
+  func increaseAsync(_ resolve: RCTPromiseResolveBlock) {
+    counter += 1
+    resolve(counter)
+  }
+  
   @objc(decrease:)
   func decrease(_ callback: RCTResponseSenderBlock) {
     counter -= 1
     callback([counter])
+  }
+  
+  
+  @objc(decreaseAsync:)
+  func decreaseAsync(_ resolve: RCTPromiseResolveBlock) {
+    counter -= 1
+    resolve(counter)
   }
 }
