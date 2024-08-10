@@ -52,7 +52,7 @@ const App = () => {
         }}
       />
 
-      <SquareView width={150} height={100} color="red">
+      <SquareView width={150} height={100} color="#ff0000">
         <Text>Hello World</Text>
       </SquareView>
     </SafeAreaView>

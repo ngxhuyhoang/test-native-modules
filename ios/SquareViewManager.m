@@ -1,8 +1,8 @@
 //
-//  RCTCalendarModule.m
+//  SquareViewManager.m
 //  TestNativeModule
 //
-//  Created by Hoang Nguyen on 9/8/24.
+//  Created by Hoang Nguyen on 10/8/24.
 //
 
 #import <Foundation/Foundation.h>
