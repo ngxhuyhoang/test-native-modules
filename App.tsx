@@ -1,10 +1,16 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useState } from 'react';
-import { Button, NativeModules, SafeAreaView, Text } from 'react-native';
+import {
+  Button,
+  NativeModules,
+  requireNativeComponent,
+  SafeAreaView,
+  Text,
+} from 'react-native';
 
 const { CounterModule, CalendarModule } = NativeModules;
 
-console.log(NativeModules);
+const SquareView = requireNativeComponent('SquareView');
 
 const App = () => {
   const [counter, setCounter] = useState(0);
@@ -45,6 +51,10 @@ const App = () => {
           CalendarModule.createCalendarEvent('testName', 'testLocation');
         }}
       />
+
+      <SquareView width={150} height={100} color="red">
+        <Text>Hello World</Text>
+      </SquareView>
     </SafeAreaView>
   );
 };

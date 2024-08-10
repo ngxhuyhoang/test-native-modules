@@ -21,6 +21,7 @@ class MainApplication : Application(), ReactApplication {
                     // add(MyReactNativePackage())
                     add(CalendarPackage())
                     add(CounterPackage())
+                    add(SquareViewPackage())
                 }
 
             override fun getJSMainModuleName(): String = "index"
